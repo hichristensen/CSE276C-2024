@@ -1,0 +1,13 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Introduction - Regression}{4}{0}{1}
+\beamer@sectionintoc {2}{Preliminaries}{8}{0}{2}
+\beamer@sectionintoc {3}{Linear Basis Function Models}{13}{0}{3}
+\beamer@sectionintoc {4}{Bayesian Linear Regression}{27}{0}{4}
+\beamer@sectionintoc {5}{Bayesian Model Comparison}{34}{0}{5}
+\beamer@sectionintoc {6}{Regression Summary}{41}{0}{6}
+\beamer@sectionintoc {7}{Classification}{43}{0}{7}
+\beamer@sectionintoc {8}{Linear Discriminant Functions}{49}{0}{8}
+\beamer@sectionintoc {9}{LSQ for Classification}{59}{0}{9}
+\beamer@sectionintoc {10}{Fisher's Discriminant Method}{63}{0}{10}
+\beamer@sectionintoc {11}{Perceptrons}{69}{0}{11}
+\beamer@sectionintoc {12}{Summary}{73}{0}{12}

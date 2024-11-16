@@ -1,0 +1,12 @@
+\newcommand{\SortNoop}[1]{} \newcommand{\OneLetter}[1]{#1}
+  \newcommand{\SwapArgs}[2]{#2#1}
+\begin{thebibliography}{1}
+
+\bibitem{Deriche92a}
+R.~Deriche, R.~Vaillant, and O.~Faugeras.
+\newblock {\em {From Noisy Edges Points to 3D Reconstruction of a Scene : A
+  Robust Approach and Its Uncertainty Analysis}}, volume~2, pages 71--79.
+\newblock World Scientific, 1992.
+\newblock Series in Machine Perception and Artificial Intelligence.
+
+\end{thebibliography}

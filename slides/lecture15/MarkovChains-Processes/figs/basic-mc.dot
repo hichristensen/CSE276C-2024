@@ -1,0 +1,19 @@
+digraph
+{
+    rankdir=TB;
+    node [ shape = circle ];
+    { rank = same; 1 2 3 4 5 6 }
+
+    2 -> 3[label="p"];
+    3 -> 4[label="p"];
+    4 -> 5[label="p"];
+    5 -> 6[label="p"];
+    6:ne -> 6:nw[label="1"];
+
+    edge[ dir = back ];
+    1:ne -> 1:nw[label="1"];
+    1 -> 2[ label="q"];
+    2 -> 3[label="q"];
+    3 -> 4[label="q"];
+    4 -> 5[label="q"];
+}
