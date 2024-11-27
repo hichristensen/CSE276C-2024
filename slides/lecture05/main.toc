@@ -1,0 +1,17 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@sectionintoc {2}{Bracketing}{4}{0}{2}
+\beamer@subsectionintoc {2}{1}{Bi-section}{8}{0}{2}
+\beamer@subsectionintoc {2}{2}{Secant}{10}{0}{2}
+\beamer@subsectionintoc {2}{3}{Regula Falsi / False Position}{13}{0}{2}
+\beamer@sectionintoc {3}{Root Finding}{14}{0}{3}
+\beamer@subsectionintoc {3}{1}{Brent's Method}{15}{0}{3}
+\beamer@subsectionintoc {3}{2}{Newton-Raphson's Method}{17}{0}{3}
+\beamer@sectionintoc {4}{Search Summary}{21}{0}{4}
+\beamer@sectionintoc {5}{Polynomial Roots - Introduction}{25}{0}{5}
+\beamer@sectionintoc {6}{Roots of Low Order Polynomials}{27}{0}{6}
+\beamer@sectionintoc {7}{Root Counting}{33}{0}{7}
+\beamer@sectionintoc {8}{Deflation}{38}{0}{8}
+\beamer@sectionintoc {9}{Newton's Method}{41}{0}{9}
+\beamer@sectionintoc {10}{M{\"u}ller's Method}{43}{0}{10}
+\beamer@sectionintoc {11}{Summary}{45}{0}{11}

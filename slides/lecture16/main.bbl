@@ -1,0 +1,5 @@
+\newcommand{\SortNoop}[1]{} \newcommand{\OneLetter}[1]{#1}
+  \newcommand{\SwapArgs}[2]{#2#1}
+\begin{thebibliography}{}
+
+\end{thebibliography}

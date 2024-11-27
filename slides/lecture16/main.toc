@@ -1,0 +1,7 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Recap - Factor Graphs}{3}{0}{1}
+\beamer@sectionintoc {2}{Modeling motion}{6}{0}{2}
+\beamer@sectionintoc {3}{Robot Localization}{11}{0}{3}
+\beamer@sectionintoc {4}{Pose SLAM}{19}{0}{4}
+\beamer@sectionintoc {5}{Landmark-based SLAM}{26}{0}{5}
+\beamer@sectionintoc {6}{Summary}{36}{0}{6}
