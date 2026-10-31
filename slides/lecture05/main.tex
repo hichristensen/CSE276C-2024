@@ -1,5 +1,8 @@
 \documentclass[10pt]{beamer}
 
+\usepackage{pgfpages}
+% \pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+
 \mode<presentation>
 {
   \usetheme[height=1.25cm]{Madrid}
@@ -93,9 +96,9 @@
 
 \bigskip
 
-\date[Oct 2024]% (optional, should be abbreviation of conference name)
+\date[Oct 2026]% (optional, should be abbreviation of conference name)
 {\small%
-  October 2024}
+  October 2026}
 
 \begin{document}
   
@@ -129,7 +132,7 @@
 \section{Bracketing}
 
 \begin{frame}
-  \frametitle{Braketing}
+  \frametitle{Bracketing}
   \begin{itemize}
   \item First problem is to know where to look for roots. 
   \item What would be your strategy? \pause
@@ -231,7 +234,7 @@
 \begin{frame}
   \frametitle{Secant Method}
   \begin{itemize}
-  \item The Secant Method is not gauranteed to pick the two points with opposite sign
+  \item The Secant Method is not guaranteed to pick the two points with opposite sign
   \item Secant is super-linear with a convergence rate of
     \[
       \lim_{k \rightarrow \infty} |s_{k+1}| = const |s_k|^{1.618}
@@ -561,13 +564,13 @@
     \[
       p(x) = x^5 + 4 x^4 - 3 x^2 + x -6
     \]
-  \item So it must have 3 or 1 postive root and
+  \item So it must have 3 or 1 positive root and
   \item and it must have 2 or 0 negative roots
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Sturms theorem}
+  \frametitle{Strum's theorem}
   \begin{itemize}
   \item We can derive a sequence of polynomials
   \item Let f(x) be a polynomial. Denote the original $f_0(x)$ and the
@@ -605,8 +608,8 @@
         f_0(x) & = &  x^5 + 5x^4 - 20 x^2 - 10x + 2\\
         f_1(x) & = &  x^4 + 4 x^3 - 8x - 2\\
         f_2(x) & = &  x^3 + 3 x^2 - 1\\
-        f_3(x) & = &  3 x^2 + 7 x +1 \\
-        f_4(x) & = &  17x + 11\\
+        f_3(x) & = &  3 x^2 +7 x + 1 \\
+        f_4(x) & = &  17 x + 11\\
         f_5(x) & = &  1\\
       \end{array}
     \]

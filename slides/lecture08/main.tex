@@ -93,9 +93,9 @@
 
 \bigskip
 
-\date[Oct 2024]% (optional, should be abbreviation of conference name)
+\date[Oct 2026]% (optional, should be abbreviation of conference name)
 {\small%
-  October 2024}
+  October 2026}
 
 \begin{document}
 
@@ -131,13 +131,13 @@
 \begin{frame}
   \frametitle{Typical tasks}
   \begin{itemize}
-  \item Where can I find a can of coke? 
+  \item Where can I find a can of Coke? 
   \item Check the stove -- is it off? 
   \item Put away the groceries in the pantry? 
   \end{itemize}
 \end{frame}
 
-\section{Appearance based learning and recognition}
+\section {Appearance-based learning and recognition}
 \label{sec:appearance}
 
 \begin{frame}
@@ -146,7 +146,7 @@
   \item High-level Shape Models (e.g., Generalized Cylinders)
     \begin{itemize}
     \item Idealized images
-    \item Texture Less
+    \item Textureless
     \end{itemize}
   \item Mid-level Shape Models (e.g., CAD models, Superquadrics)
     \begin{itemize}
@@ -186,7 +186,7 @@
   \center{\includegraphics[height=6cm]{process-diagram}}
 \end{frame}
 
-\section{Appearance based method for visual object recognition}
+\section {Appearance-based method for visual object recognition}
 \label{sec:appearance-rec}
 
 \begin{frame}
@@ -201,14 +201,14 @@
     \item Illumination conditions / variations
     \end{itemize}
   \item Acquired through an automatic learning phase
-  \item Well defined error characteristics
+  \item Well-defined error characteristics
   \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Numerous use-cases}
   \begin{itemize}
-  \item Face-recognition (eigen faces)
+  \item Face recognition (eigen faces)
   \item Visual inspection
   \item Tracking and pose estimation for robotics
   \item Basic object tracking
@@ -228,7 +228,7 @@
   \frametitle{IDEA: Subspace Methods}
   \begin{itemize}
   \item Images are represented as points in an N-dimensional space
-  \item Images only occupy a small fraction of the hyper-space
+  \item Images only occupy a small fraction of the hyperspace
   \item Characterize the subspace / manifold spanned by the images
   \end{itemize}
   \centerline{\includegraphics[height=4cm]{subspace-sketch}}
@@ -262,7 +262,7 @@
   \begin{itemize}
   \item Image set (normalized, zero mean)
     \[ X = [ x_0 ~ x_1 ~ \ldots ~  x_{n-1} ] ; ~ X \in R^{m \times n} \]
-  \item Looking for ortho-normal basis
+  \item Looking for an orthonormal basis
     \[ U = [ u_0 ~ u_1 ~ \ldots ~ u_k ~ ] ; k \ll n \]
   \item Individual images are then a linear combination of basis vectors
     \[ x_i \approx \tilde{x}_i = \sum_{j=0}^k q_j(x_i) u_j \]
@@ -355,7 +355,7 @@
 \begin{frame}
   \frametitle{PCA for visual recognition and pose estimation}
   \begin{itemize}
-  \item Objects/images are represented as coordinates in an m-dimension space
+  \item Objects/images are represented as coordinates in an m-dimensional space
   \item An example
     \begin{itemize}
     \item 3D space with points representing objects on a manifold of
@@ -382,7 +382,7 @@
   \item To recover $a_i$ the image is projected into the eigenspace
     \centerline{\includegraphics[height=3cm]{pca-calculation}}
   \item Complete image $x_i$ is required to calculate $a_i$
-  \item Corresponds to a least square solution
+  \item Corresponds to a least-squares solution
   \end{itemize}
 \end{frame}
 
@@ -402,7 +402,7 @@
 \begin{frame}
   \frametitle{Linear Discriminate Analysis}
   \begin{itemize}
-  \item For LDA would would like to
+  \item For LDA, we would like to
     \begin{itemize}
     \item Maximize distance between classes
     \item Minimize distance within classes
@@ -457,11 +457,11 @@
     \[
       \rho (W) = \frac{W^T S_B W}{W^T S_W W}
     \]
-  \item given by solution of generalized eigenvalue problem
+  \item given by the solution of the generalized eigenvalue problem
     \[
       S_B W = \lambda S_W W
     \]
-  \item The the c-class case we obtain c-1 projections as the largest eigenvalue of
+  \item In the c-class case, we obtain c-1 projections as the largest eigenvalue of
     \[
       S_B W_i = \lambda S_W W_i
     \]
@@ -474,7 +474,7 @@
   \item How does one calculate LDA for high-dimensional images? 
   \item Problem: $S_W$ is always singular
     \begin{itemize}
-    \item Number of pixels in an image is larger than number of images in training set
+    \item Number of pixels in an image is larger than the number of images in the training set
     \end{itemize}
   \item Fisherfaces example: reduce dimensionality by doing a PCA first and then LDA
   \item Simultaneous diagonalization of $S_W$ and $S_B$
@@ -517,7 +517,7 @@
     \centerline{\includegraphics[height=3.5cm]{fisher-performance}}
   \item Significantly better performance than PCA for face recognition
   \item Noise sensitive
-  \item Standard large scale Kaggle competitions today score ~97\%
+  \item Standard large-scale Kaggle competitions today score ~97\%
   \end{itemize}
 \end{frame}
 
@@ -530,7 +530,7 @@
   \begin{itemize}
   \item Also supervised method by motivated by regression /
     interpolation tasks such as {\color{red} pose estimation}
-  \item CCA related two sets of observations by determining pairs of directions that yield
+  \item CCA relates two sets of observations by determining pairs of directions that yield
     maximum correlation between the data sets
   \item Find a pair of directions (canonical factors):
     $ w_x \in R^P ~and ~w_y \in R^q $ so that the correlation of the
@@ -616,9 +616,9 @@
   \frametitle{Independent Component Analysis (ICA)}
   \begin{itemize}
   \item ICA is a powerful technique from signal processing (blind source separation)
-  \item Can we seen as an extension of PCA
+  \item Can be seen as an extension of PCA
   \item PCA takes statistics up to 2nd order into account
-  \item ICA estimate components that are statistically independent
+  \item ICA estimates components that are statistically independent
   \item Generates sparse/local descriptors - sparse coding
   \end{itemize}
 \end{frame}
@@ -652,10 +652,10 @@
   \item Adaptive algorithms based on stochastic gradient
     \begin{itemize}
     \item Measure independence
-    \item Computer A recursively to maximize independence
+    \item Compute a recursively to maximize independence
     \end{itemize}
   \item ICA only works for non-Gaussian sources
-  \item Often whitening of data is performance
+  \item Often whitening of data is performed
   \item ICA does not provide ordering
   \item ICA components are not orthogonal
   \end{itemize}
@@ -679,7 +679,7 @@
 \begin{frame}
   \frametitle{Summary}
   \begin{itemize}
-  \item Brief overview of use of sub-space methods for data processing
+  \item Brief overview of the use of subspace methods for data processing
   \item The exact task should dictate the choice of methods
   \item Other cascaded processing simplifies complexity
   \item Good standard tools available in most signal processing toolboxes

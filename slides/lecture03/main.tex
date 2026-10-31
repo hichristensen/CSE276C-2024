@@ -1,5 +1,8 @@
 \documentclass[10pt]{beamer}
 
+\usepackage{pgfpages}
+% \pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+
 \mode<presentation>
 {
   \usetheme[height=1.25cm]{Madrid}
@@ -82,7 +85,7 @@
 %%    \begin{center}
       Computer Science and Engineering\\
       University of California, San Diego\\
-      \myemph{\url{http://cri.ucsd.edu}}\\          
+      \myemph{\url{http://cri.ucsd.edu}}\\
 %%    \end{center}
 
   \end{minipage}
@@ -93,11 +96,11 @@
 
 \bigskip
 
-\date[Oct 2024]% (optional, should be abbreviation of conference name)
-{\small October 2024}
+\date[Oct 2026]% (optional, should be abbreviation of conference name)
+{\small October 2026}
 
 \begin{document}
-  
+
 \nobibliography{/Users/hic/Dropbox/bibliography/bib-file}
 \bibliographystyle{plain}
 
@@ -196,7 +199,7 @@
     \[
       y_i = a_0 + a_1 x_i + a_2 x_i^2 + \ldots + a_n x_i^n
     \]
-  \item in matrix form    
+  \item in matrix form
   \end{itemize}
 \end{frame}
 
@@ -229,7 +232,7 @@
   \item or
     \[ V~x = y \]
     where $\mathbf{V}$ is referred to as a Vandermonde matrix.
-  \item Unfortunately the system is frequently poorly conditioned      
+  \item Unfortunately the system is frequently poorly conditioned
   \end{itemize}
 \end{frame}
 
@@ -248,7 +251,7 @@
     \]
   \item or
     \[
-      y_k L_k (x_k) = y_k L_k (x) 
+      y_k L_k (x_k) = y_k L_k (x)
     \]
     \[
       L_k (x) = \prod_{{\tiny
@@ -287,9 +290,9 @@
     \[
       f(x) = (x-1)^2
     \]
-  \item Assume we have two data points (0,1) and (1,0). 
-  \item This results in $a_0 = 1$ and $a_1= 0$. 
-  \item As $a_1 = 0$ we only have to consider 
+  \item Assume we have two data points (0,1) and (1,0).
+  \item This results in $a_0 = 1$ and $a_1= 0$.
+  \item As $a_1 = 0$ we only have to consider
     \[
       L_0 (x) = \frac{x - x_1}{x_1 - x_0} = \frac{ x - 1 } { 0 -1 } = -x + 1
     \]
@@ -312,7 +315,7 @@
         x_2 = -1& a_2 = 4 \\
       \end{array}
     \]
-    So    
+    So
     \[
       \begin{array}{lll}
         L_0(x) & = & \frac{x-x_1}{x_0-x_1} \frac{x - x_2}{x_0-x_2} = -(x-1)(x+1)\\
@@ -346,7 +349,7 @@
 \begin{frame}
   \frametitle{Cubic spline interpolation}
   \begin{itemize}
-  \item Smoothing w.\ constraints 
+  \item Smoothing w.\ constraints
   \item Limiting higher order gradients (say acceleration, curvature, ...)
     \[
       \begin{array}{lll}
@@ -354,7 +357,7 @@
         f'''  & = & c_1\\
         f''   & = & c_1 x + c_2\\
         f'    & = & \frac{c_1}{2} x^2 + c_2 x + c_ 3\\
-        f     & = & \frac{c_1}{6} x^3 + \frac{c_2}{2} x^2 + c_3 x + c_4\\                    
+        f     & = & \frac{c_1}{6} x^3 + \frac{c_2}{2} x^2 + c_3 x + c_4\\
       \end{array}
     \]
   \end{itemize}
@@ -387,7 +390,7 @@
     \[
       \begin{array}{cc}
         C = \frac{1}{6} (A^3-A)(x_{j+1} - x_j)^2 ~~~ & ~~~
-        D = \frac{1}{6} (B^3-B)(x_{j+1} - x_j)^2\\                                                       
+        D = \frac{1}{6} (B^3-B)(x_{j+1} - x_j)^2\\
       \end{array}
     \]
   \item If you differentiate (see NR sec 3.3) you get
@@ -397,7 +400,7 @@
     which translate into the tabulated values at $x_j$ and $x_{j+1}$.
   \item The advantage of cubic is that only neighboring points are
     used in estimation. A tridiagonal matrix can be used for the
-    computations. 
+    computations.
   \end{itemize}
 \end{frame}
 
@@ -406,7 +409,7 @@
 \begin{frame}
   \frametitle{What about multi-variate interpolation? }
   \begin{itemize}
-  \item Does this generalize to multiple dimensions? 
+  \item Does this generalize to multiple dimensions?
   \item We frequently have multi-dimensional data in robotics
     \begin{itemize}
     \item Image data, Lidar, radar, ...
@@ -424,7 +427,7 @@
   \begin{itemize}
   \item Consider
     \[ y_{ij} = y(x _{1i}, x_{2j}) \]
-  \item with point intervals [$x_{1i}, x_{1(i+1)}$] and  [$x_{2j}, x_{2(j+1)}$] 
+  \item with point intervals [$x_{1i}, x_{1(i+1)}$] and  [$x_{2j}, x_{2(j+1)}$]
   \item values for ij
     \[
       \begin{array}{ccc}
@@ -452,7 +455,7 @@
     \[
       y(x_1, x_2) = (1-t)(1-u) y_0 + t(1-u) y_1 + tu y_2 + (1-t)u y_3
     \]
-  \item For a fair sized grid this generates ``good'' solutions. 
+  \item For a fair sized grid this generates ``good'' solutions.
   \end{itemize}
 \end{frame}
 
@@ -461,7 +464,7 @@
 \begin{frame}
   \frametitle{Kringing interpolation}
   \begin{itemize}
-  \item What if we consider the data generation by a stochastic process? 
+  \item What if we consider the data generation by a stochastic process?
   \item Could we generate a maximum likelihood (ML) estimate?
   \item The data is a vector of samples from the process and we can
     compute the probability density estimate and parameters such as
@@ -546,9 +549,23 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Kringing example - 2D}
+  \begin{center}
+      \includegraphics[width=10cm]{ca-prep1}
+  \end{center}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Kringing example - 2D}
+  \begin{center}
+      \includegraphics[width=10cm]{ca-prep2}
+  \end{center}
+\end{frame}
+
+\begin{frame}
   \frametitle{Regularized Kringing}
   \begin{itemize}
-  \item We can use a regularized LSQ if we want to control the variation in w. 
+  \item We can use a regularized LSQ if we want to control the variation in w.
   \item Consider a revised error function
     \[ E' = E_D(w) + \lambda E_w(w) \] say
     \[ E' = \frac{1}{2} \sum_i (y_i - w^T\phi(x_i))^2 + \frac{\lambda}{2} w^T w \]
@@ -556,7 +573,7 @@
     \[
       w = (\lambda + \Phi^T \Phi)^{-1} \Phi^T \vec{y}
     \]
-    as an example of how you can tweak the optimization / approximation    
+    as an example of how you can tweak the optimization / approximation
   \end{itemize}
 \end{frame}
 
@@ -571,7 +588,7 @@
   \item Spline based interpolation
   \item Uni- and Multi-Variate Approaches
   \item Stochastic Models
-  \item Next time functional interpolation \& approximation 
+  \item Next time functional interpolation \& approximation
   \end{itemize}
 \end{frame}
 \end{document}

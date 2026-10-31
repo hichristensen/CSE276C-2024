@@ -93,9 +93,9 @@
 
 \bigskip
 
-\date[Oct 2024]% (optional, should be abbreviation of conference name)
+\date[Oct 2026]% (optional, should be abbreviation of conference name)
 {\small%
-  October 2024}
+  October 2026}
 
 \begin{document}
   
@@ -111,7 +111,7 @@
 \begin{frame}
   \frametitle{Introduction}
   \begin{itemize}
-  \item Interested in integration of function to allow estimation of
+  \item Interested in integration of functions to allow estimation of
     future value
   \item Lots of potential applications in robotics
     \begin{itemize}
@@ -168,7 +168,7 @@
     \[
       \int_{x_0}^{x_1} f(x) dx = \frac{f_1+f_0}{2} h + O(f'' h^3)
     \]
-  \item The Simpson rules is
+  \item The Simpson rule is
     \[
       \int_{x_0}^{x_2} f(x) dx = \frac{h}{3} (f_0 + 4 f_1 + f_2) + O(h^5 f^{(4)})
     \]
@@ -177,7 +177,7 @@
     \[
       \int_{x_0}^{x_3} f(x) dx = \frac{h}{8} (3 f_0 + 9 f_1 + 9 f_2 + 3 f_3)
     \]
-  \item There are a series of rules for higher order, check literature
+  \item There are a series of rules for higher order; check literature
   \end{itemize}
 \end{frame}
 
@@ -206,21 +206,21 @@
 \begin{frame}
   \frametitle{Trapezoid Rule - Strategy?}
   \begin{itemize}
-  \item How can you effective use the trapezoid rule?
+  \item How can you effectively use the trapezoid rule?
     \pause
-  \item Use of a coarse to fine strategy and watch convergence
+  \item Use a coarse to fine strategy and watch convergence
   \item This is termed Romberg integration in numerical toolboxes
-  \item In general these methods generate good accuracy for proper functions? 
+  \item In general, these methods generate good accuracy for proper functions? 
   \end{itemize}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Handling of improper function}
+  \frametitle{Handling of improper functions}
   \begin{itemize}
   \item What is an improper function?
     \pause
     \begin{enumerate}
-    \item Integrand goes to a finite value but cannot be evaluated at a point, such as
+    \item The integrand goes to a finite value but cannot be evaluated at a point, such as
       \[
         \frac{sin x}{x} \mbox{ ~~~ at ~~~ } x=0
       \]
@@ -241,6 +241,7 @@
 
 \begin{frame}
   \frametitle{The Euler-Maclaurin Summation Formula}
+{\small
   \begin{itemize}
   \item We can write the basic Simpson's rule as
     \[
@@ -267,12 +268,13 @@
   \item Enables you to compute an estimate of the error for a particular integration
   \item Other integration functions have similar error functions - decreasing with complexity
   \end{itemize}
+  }
 \end{frame}
 
 \begin{frame}
   \frametitle{Extended Mid-point Formulation}
   \begin{itemize}
-  \item In many cases using the mid-point is a valuable alternative
+  \item In many cases, using the mid-point is a valuable alternative
     \[
       \int_{x_0}^{x_{N-1}} f(x) dx = h (f_{1/2} + f_{3/2} + \ldots + f_{N-3/2}) + O(\frac{1}{N^2})
     \]
@@ -290,7 +292,7 @@
 \begin{frame}
   \frametitle{Handling improper integrals}
   \begin{itemize}
-  \item A trick for improper integrals is to do variable substitution to eliminate a challenge
+  \item A trick for improper integrals is to do a variable substitution to eliminate a challenge
   \item Say one of the values is at $-\infty$ or $\infty$ we can substitute
     \[
       \int_a^b f(x) dx = \int_{1/b}^{1/a} \frac{1}{t^2} f\left( \frac{1}{t} \right) dt
@@ -301,7 +303,7 @@
 \begin{frame}
   \frametitle{Variable substitution}
   \begin{itemize}
-  \item More generally we can do variable substitution as
+  \item More generally, we can do variable substitution as
     \[
       I = \int_a^b f(x) dx = \int_c^d f(x(t)) \frac{dx}{dt} dt
     \]
@@ -326,7 +328,7 @@
     \[
       \int_a^b W(x) f(x) dx \approx \sum_{j=0}^{N-1} W_j f(x_j)
     \]
-  \item For polynomials this can be an exact approximation
+  \item For polynomials, this can be an exact approximation
   \item We can approximate f(x) with a Gaussian Mixture and choose weights to match
     \[
       f(x) \approx \sum_{k=0}^N W_k N(x | x_k, \sigma_k)
@@ -337,7 +339,7 @@
 \begin{frame}
   \frametitle{Partitioned / Adaptive Integration}
   \begin{itemize}
-  \item If you have a function with variable dynamics it makes sense
+  \item If you have a function with variable dynamics, it makes sense
     to partition the integration into intervals and use Romberg
     integration on each interval, i.e.
     \[
@@ -355,9 +357,9 @@
   \begin{itemize}
   \item Simple linear approximations are effective for well-behaved functions
   \item The order of your approximation can vary according to function complexity
-  \item Using Bernoulli functions we can approximate the estimated error
+  \item Using Bernoulli functions, we can approximate the estimated error
   \item Recursive estimation with error monitoring is often effective
-  \item Do a function analysis first to make sure function is proper
+  \item Do a function analysis first to make sure the function is proper
   \item Next we will discuss integration of ODE with standard
     methods such as Runga-Kutta, Step-size variation, etc.
   \end{itemize}
@@ -375,7 +377,7 @@
   \frametitle{Introduction}
   \begin{itemize}
   \item For integration of a set of ordinary differential equations
-    you can always reduce it into a set of first order differential
+    you can always reduce it to a set of first-order differential
     equations. 
   \item Example
     \[
@@ -436,11 +438,11 @@
     \]
   \item There are three major approaches:
     \begin{enumerate}
-    \item Runge-Kutta: Euler type propagation
+    \item Runge-Kutta: Euler-type propagation
     \item Richardson extrapolation / Burlirsch-Stoer: extrapolation type estimation with small step sizes
     \item Predictor-Corrector: extrapolation with correction. 
     \end{enumerate}
-  \item Runge-Kutta most widely adopted for ``generic'' problems. Great if function evaluation is cheap
+  \item Runge-Kutta is most widely adopted for ``generic'' problems. Great if function evaluation is cheap
   \item Burlirsch-Stoer generates higher precision
   \item Predictor-Corrector is historically interesting, but rarely used today
   \end{itemize}
@@ -464,7 +466,7 @@
 \begin{frame}
   \frametitle{Runge-Kutta - Stepped Up}
   \begin{itemize}
-  \item We can use a mid-point to get a closer estimate, i.e.,
+  \item We can use a midpoint to get a closer estimate, i.e.,
     \[
       \begin{array}{rcl}
         k_1 & = & h f(x_n, y_n)\\
@@ -478,7 +480,7 @@
 \begin{frame}
   \frametitle{4th order Runge-Kutta}
   \begin{itemize}
-  \item We can easily extend to richer models. A typical example is the fourth order model
+  \item We can easily extend to richer models. A typical example is the fourth-order model
     \[
       \begin{array}{rcl}
         k_1 & = & h f( x_n, y_n)\\
@@ -497,7 +499,7 @@
   \frametitle{Adaptive Runge-Kutta}
   \begin{itemize}
   \item Could we adjust the step-size? 
-  \item Estimation of performance adds an overhead
+  \item Estimating performance adds overhead
   \item What would be an obvious solution? \pause
     \begin{enumerate}
     \item Do a full step
@@ -505,14 +507,14 @@
     \item Compare (could be recursive)
     \item Next
     \end{enumerate}
-  \item In general no one goes beyond 5th order Runge-Kutta
+  \item In general, no one goes beyond 5th-order Runge-Kutta
   \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{PI step control of RK}
   \begin{itemize}
-  \item Could we use PI control to track stepsize? \pause
+  \item Could we use PI control to track step size? \pause
   \item How about
     \[
       h_{n+1} = S h_n \mbox{err}_n^{\alpha} \mbox{err}_{n-1}^{\beta}
@@ -533,16 +535,16 @@
   \item Things to consider
     \begin{enumerate}
     \item Does not do well on functions w. table lookup or interpolation
-    \item Not well suited for functions with singulaties within intg range
+    \item Not well suited for functions with singularities within intg range
     \item Not well suited for ``expensive'' functions
     \end{enumerate}
   \item The approach is based on three ideas
     \begin{enumerate}
     \item Final answer is based on selection of (adaptive) stepsize just like Romberg
     \item Use of rational functions for extrapolation (allow larger h)
-    \item Integration method reply on use of even functions
+    \item Integration method relies on use of even functions
     \end{enumerate}
-  \item Typically the steps size H is large and h is 100+ steps
+  \item Typically the step size H is large, and h is 100+ steps
   \end{itemize}
 \end{frame}
 
@@ -565,7 +567,7 @@
         y(n_n + H) & = & \frac{1}{2} [ z_n + z_{n-1} + h f(x+H, z_n) ] \\ 
       \end{array}
     \]
-  \item Centered mid-point or centered difference method
+  \item Centered midpoint or centered difference method
   \item The error can be shown to be
     \[
       y_n - y(x+H) = \sum_{i=0}^{\infty} \alpha_i h^{2i}
@@ -583,11 +585,11 @@
       y(x+H) = \frac{4 y_n - y_{n/2}}{3}
     \]
   \item which is accurate to the 4th order as Runge-Kutta but with
-    2/3 less derivative evaluation? 
+    2/3 fewer derivative evaluations? 
   \item How do you choose good step sizes for refinement? \pause
   \item One strategy could be
     \[
-      n = 2, 4, 6, 8, 12, 16, 24, 32, \ldots \mbox{~~~~} n_ = 2 n_{j-2}
+      n = 2, 4, 6, 8, 12, 16, 24, 32, \ldots \mbox{~~~~} n_j = 2 n_{j-2}
     \]
     more recently a suggestion
     \[
@@ -696,9 +698,9 @@
   \begin{columns}
     \begin{column}{7cm}
       \begin{itemize}
-      \item In most cases grid propagation
-      \item Finite differences is a basic approximation
-      \item Final structure is a sparse matrix 
+      \item In most cases, grid propagation
+      \item Finite differences are a basic approximation
+      \item The final structure is a sparse matrix 
       \item Numerous models and packages to address
       \end{itemize}
     \end{column}
@@ -714,7 +716,7 @@
 \begin{frame}
   \frametitle{Summary}
   \begin{itemize}
-  \item We can organize ODEs as a set of coupled 1st order ODEs
+  \item We can organize ODEs as a set of coupled 1st-order ODEs
   \item Runge-Kutta is ideal for ``cheap'' functions, especially 4th
     order approximation
   \item Buerlirsch-Stoer is ideal for high-accuracy integration
