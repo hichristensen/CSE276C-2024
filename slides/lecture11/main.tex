@@ -35,7 +35,7 @@
 
 \usepackage{amsmath,amssymb,amsxtra,amsthm}
 \usepackage{algorithm,algorithmic}
-\usepackage[authoryear]{natbib}
+% \usepackage[authoryear]{natbib}
 \usepackage{bibentry}
 \usepackage{xspace}
 \usepackage{changepage}
@@ -362,7 +362,7 @@
   \item Error model: $d_i = r_i \cos(\phi_i - \theta) - \rho$
   \item Optimize: $ \textrm{argmin}_{(\rho,\theta)} \sum_i (r_i
     \cos(\phi_i - \theta) - \rho)^2 $
-  \item Error model derived in Deriche et al.~\cite{Deriche92a}
+  \item Error model derived in Deriche et al.~\cite{deriche_noisy_1992}
   \item Well suited for ``clean-up'' of Hough lines
   \end{itemize}
 \end{frame}
@@ -924,7 +924,7 @@
 \begin{frame}
   \frametitle{Perceptron Algorithm}
   \begin{itemize}
-  \item Developed by Rosenblatt (1962)
+  \item Developed by Rosenblatt (1958) \cite{rosenblatt_perceptron_1958}
   \item Formed an important basis for neural networks
   \item Use a non-linear transformation $\phi(x)$
   \item Construct a decision function
@@ -1001,8 +1001,8 @@
   \end{itemize}
 \end{frame}
 
-% \bibliographystyle{plain}
-\bibliography{/Users/hic/Dropbox/bibliography/bib-file.bib}
+\bibliographystyle{ieeetr}
+\bibliography{/Users/hic/src/newlib.bib}
 
 \end{document}
 
